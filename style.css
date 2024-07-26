@@ -31,12 +31,12 @@ html, body {
 
 @keyframes fadeInDrop {
   from {
-      opacity: 0;
-      transform: translateY(-50px);
+    opacity: 0;
+    transform: translateY(-50px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -48,6 +48,148 @@ html, body {
   transition: transform 0.3s ease;
 }
 
+#money {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@keyframes drop {
+  from {
+    top: -20px;
+  }
+  to {
+    top: 100vh;
+  }
+}
+
+@keyframes bill {
+  0% {
+    transform: rotate(-180deg) translate(0px, 0px) rotateX(-360deg) rotateY(-180deg);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  10% {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 3px;
+  }
+  15% {
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 60px;
+  }
+  50% {
+    transform: rotate(180deg) translate(10px, 95px) rotateX(180deg) rotateY(180deg);
+    border-bottom-left-radius: 50px;
+  }
+  60% {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 3px;
+  }
+  70% {
+    border-top-left-radius: 10px;
+  }
+}
+
+.bill {
+  background: url('images/dollar.png') no-repeat center center;
+  background-size: contain;
+  width: 50px;
+  height: 25px;
+  position: absolute;
+  top: -40px;
+  animation: drop 7s infinite ease-in, bill 7s infinite ease-in;
+}
+
+.bill.b1 {
+  left: 40px;
+  animation-duration: 12s;
+}
+.bill.b2 {
+  left: 120px;
+  animation-duration: 7s;
+}
+.bill.b3 {
+  left: 200px;
+  animation-duration: 11s;
+}
+.bill.b4 {
+  left: 280px;
+  animation-duration: 13s;
+}
+.bill.b5 {
+  left: 380px;
+  animation-duration: 8s;
+}
+.bill.b6 {
+  left: 480px;
+  animation-duration: 6s;
+}
+.bill.b7 {
+  left: 580px;
+  animation-duration: 12s;
+}
+.bill.b8 {
+  left: 680px;
+  animation-duration: 5s;
+}
+.bill.b9 {
+  left: 700px;
+  animation-duration: 11s;
+}
+.bill.b10 {
+  left: 720px;
+  animation-duration: 7s;
+}
+.bill.b11 {
+  left: 740px;
+  animation-duration: 15s;
+}
+.bill.b12 {
+  left: 750px;
+  animation-duration: 12s;
+}
+.bill.b13 {
+  left: 800px;
+  animation-duration: 6s;
+}
+.bill.b14 {
+  left: 840px;
+  animation-duration: 12s;
+}
+.bill.b15 {
+  left: 980px;
+  animation-duration: 5s;
+}
+.bill.b16 {
+  left: 1000px;
+  animation-duration: 11s;
+}
+.bill.b17 {
+  left: 1020px;
+  animation-duration: 7s;
+}
+.bill.b18 {
+  left: 1040px;
+  animation-duration: 15s;
+}
+.bill.b19 {
+  left: 1080px;
+  animation-duration: 22s;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero {
   max-width: 800px;
   margin: 20px auto;
@@ -57,6 +199,10 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
@@ -69,6 +215,7 @@ html, body {
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .cta {
@@ -85,14 +232,6 @@ html, body {
 .cta:hover {
   background-color: #b38c30;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-main {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .content-card {
@@ -174,108 +313,108 @@ main {
 
 @media (max-width: 1200px) {
   .content-card, .dexscreener-chart {
-      width: 90%;
+    width: 90%;
   }
 
   .social-icons {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .social-icons a {
-      width: auto;
-      margin-bottom: 20px;
+    width: auto;
+    margin-bottom: 20px;
   }
 
   .content-card h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .content-card p, .content-card ul {
-      font-size: 1.1rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 992px) {
   .banner {
-      max-width: 70%;
+    max-width: 70%;
   }
 
   .content-card, .dexscreener-chart {
-      width: 90%;
+    width: 90%;
   }
 
   .social-icons {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .content-card p, .content-card ul {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .banner {
-      max-width: 80%;
+    max-width: 80%;
   }
 
   .content-card, .dexscreener-chart {
-      width: 90%;
+    width: 90%;
   }
 
   .social-icons {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .content-card p, .content-card ul {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .banner {
-      max-width: 90%;
-      margin: 10px auto;
+    max-width: 90%;
+    margin: 10px auto;
   }
 
   .banner img {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
   main {
-      padding: 10px;
+    padding: 10px;
   }
 
   .content-card {
-      width: 100%;
+    width: 100%;
   }
 
   .content-card h2 {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   .content-card p, .content-card ul {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 375px) and (max-height: 667px) {
   .banner {
-      max-width: 95%;
+    max-width: 95%;
   }
 
   .content-card {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
   }
 
   .content-card h2 {
-      font-size: 1.6rem;
+    font-size: 1.6rem;
   }
 
   .content-card p, .content-card ul {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 }
 
